@@ -43,7 +43,7 @@ function addHeaderIDs(lines) {
   const slugger = new GithubSlugger();
   let inCode = false;
   const results = [];
-  lines.forEach(line => {
+  lines.forEach(function (line) {
     // Ignore code blocks
     if (line.startsWith('```')) {
       inCode = !inCode;
@@ -63,7 +63,7 @@ function addHeaderIDs(lines) {
 const [path] = process.argv.slice(2);
 
 const files = walk(path);
-files.forEach(file => {
+files.forEach(function (file) {
   if (!file.endsWith('.md')) {
     return;
   }
